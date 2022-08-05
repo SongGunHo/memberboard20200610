@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="comment">
+<insert id="save" parameterType="comment">
+    insert into  comment_table(commentWriter,boardId,commentCreatedDate)
+    values (#{commentWriter},#{boardId},now())
+</insert>
+<select id="findAll" parameterType="comment" resultType="comment">
+    select * from  comment_talbe;
+</select>
+</mapper>
